@@ -1,15 +1,14 @@
 # roles/rh-base/handlers/main.yml
 ---
-
 - name: restart journald
   service:
     name: systemd-journald
     state: restarted
 
-- name: restart firewalld
+- name: reload firewalld
   service:
     name: firewalld
-    state: restarted
+    state: reloaded
 
 - name: restart updates
   service:

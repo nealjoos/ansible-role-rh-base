@@ -39,7 +39,7 @@
     - dhcpv6-client
     - ssh
   notify:
-    - restart firewalld
+    - reload firewalld
   tags:
     - rhbase
     - security
@@ -51,7 +51,7 @@
     state: enabled
   with_items: "{{ rhbase_firewall_allow_services }}"
   notify:
-    - restart firewalld
+    - reload firewalld
   tags:
     - rhbase
     - security
@@ -63,7 +63,7 @@
     state: enabled
   with_items: "{{ rhbase_firewall_allow_ports }}"
   notify:
-    - restart firewalld
+    - reload firewalld
   tags:
     - rhbase
     - security
@@ -76,7 +76,7 @@
     state: enabled
   with_items: "{{ rhbase_firewall_interfaces }}"
   notify:
-    - restart firewalld
+    - reload firewalld
   tags:
     - rhbase
     - security
